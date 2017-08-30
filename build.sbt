@@ -1,12 +1,10 @@
-sbtPlugin := true
+lazy val `sbt-filter` = project in file(".")
 
 organization := "com.slidingautonomy.sbt"
 
 name := "sbt-filter"
 
-version := "1.0.1"
-
-scalaVersion := "2.10.4"
+version := "1.0.2-SNAPSHOT"
 
 scalacOptions += "-feature"
 
@@ -18,11 +16,11 @@ resolvers ++= Seq(
   Resolver.mavenLocal
 )
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-js-engine" % "1.0.1")
+addSbtJsEngine("1.2.2")
 
-scriptedSettings
+//scriptedSettings
 
-scriptedLaunchOpts <+= version apply { v => s"-Dproject.version=$v" }
+//scriptedLaunchOpts += s"-Dproject.version=${version.value}"
 
 publishMavenStyle := true
 

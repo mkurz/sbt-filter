@@ -1,3 +1,2 @@
-libraryDependencies <+= (sbtVersion) { sv =>
-  "org.scala-sbt" % "scripted-plugin" % sv
-}
+addSbtPlugin("com.typesafe.sbt" % "sbt-web-build-base" % "1.1.1")
+
