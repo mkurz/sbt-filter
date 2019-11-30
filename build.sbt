@@ -1,4 +1,4 @@
-lazy val `sbt-filter` = project in file(".")
+lazy val `sbt-filter` = (project in file(".")).enablePlugins(SbtWebBase)
 
 organization := "com.slidingautonomy.sbt"
 
@@ -9,14 +9,14 @@ version := "1.0.2-SNAPSHOT"
 scalacOptions += "-feature"
 
 resolvers ++= Seq(
-  "Typesafe Releases Repository" at "http://repo.typesafe.com/typesafe/releases/",
-  Resolver.url("sbt snapshot plugins", url("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots"))(Resolver.ivyStylePatterns),
+  "Typesafe Releases Repository" at "https://repo.typesafe.com/typesafe/releases/",
+  Resolver.url("sbt snapshot plugins", url("https://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots"))(Resolver.ivyStylePatterns),
   Resolver.sonatypeRepo("snapshots"),
-  "Typesafe Snapshots Repository" at "http://repo.typesafe.com/typesafe/snapshots/",
+  "Typesafe Snapshots Repository" at "https://repo.typesafe.com/typesafe/snapshots/",
   Resolver.mavenLocal
 )
 
-addSbtJsEngine("1.2.2")
+addSbtJsEngine("1.2.3")
 
 //scriptedSettings
 
