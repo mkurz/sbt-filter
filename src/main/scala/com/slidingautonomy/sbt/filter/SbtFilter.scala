@@ -23,15 +23,15 @@ object SbtFilter extends AutoPlugin {
 
   override def projectSettings = Seq(
     filter := runFilter.value,
-    includeFilter in filter := NothingFilter,
-    excludeFilter in filter := NothingFilter
+    filter / includeFilter := NothingFilter,
+    filter / excludeFilter := NothingFilter
   )
 
   private def runFilter: Def.Initialize[Task[Pipeline.Stage]] = Def.task {
     mappings =>
 
-      val include = (includeFilter in filter).value
-      val exclude = (excludeFilter in filter).value
+      val include = (filter / includeFilter).value
+      val exclude = (filter / excludeFilter).value
       mappings.filter(f => exclude.accept(f._1) || !include.accept(f._1) || f._2.startsWith("lib/"))
   }
 
