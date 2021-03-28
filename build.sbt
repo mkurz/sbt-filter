@@ -9,10 +9,6 @@ version := "1.0.2-SNAPSHOT"
 scalacOptions += "-feature"
 
 resolvers ++= Seq(
-  "Typesafe Releases Repository" at "https://repo.typesafe.com/typesafe/releases/",
-  Resolver.url("sbt snapshot plugins", url("https://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots"))(Resolver.ivyStylePatterns),
-  Resolver.sonatypeRepo("snapshots"),
-  "Typesafe Snapshots Repository" at "https://repo.typesafe.com/typesafe/snapshots/",
   Resolver.mavenLocal
 )
 
